@@ -35,4 +35,8 @@ if state_id != None:
                 min_age = 18
             elif (min_age >=45):
                 min_age = 45
-        st.table(filter_data(data, min_age))
+            data = filter_data(data, min_age)
+            if(data.size > 0):
+                st.table(data)
+            else:
+                st.text("Sorry! No vaccines are available for the next seven days with the entered options.")
